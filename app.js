@@ -30,7 +30,7 @@ app.post('/npm-install', (req, res) => {
   const directory = req.body.directory || process.cwd(); // Use current directory if not provided
 
   // Construct the npm install command
-  const npmInstallCommand = `npm install`;
+  const npmInstallCommand = `install`;
 
   // Execute the npm install command with sudo
   exec(`sudo npm -C "${directory}" ${npmInstallCommand}`, (error, stdout, stderr) => {
