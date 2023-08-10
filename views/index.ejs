@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>npm Install Runner</title>
+  <style>
+ body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+    }
+    .message {
+      color: #e74c3c;
+      margin-bottom: 10px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    button[type="submit"] {
+      background-color: #3498db;
+      color: #fff;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    .output {
+        margin-top: 20px;
+        white-space: pre-line; /* Use pre-line to preserve line breaks and collapse whitespace */
+        background-color: #f5f5f5;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <h1>npm Install Runner</h1>
+  
+  <% if (message) { %>
+    <div><%= message %></div>
+  <% } %>
+  
+  <form method="post" action="/npm-install">
+    <label>
+      Enter Directory (optional):
+      <input type="text" name="directory">
+    </label>
+    <!-- <br>
+    <label>
+      Preselect Package:
+      <input type="text" name="preselect">
+    </label>
+    <br>
+    <label>
+      Additional Parameters (optional):
+      <input type="text" name="parameter1">
+    </label> -->
+    <br>
+    <button type="submit">Run Command</button>
+  </form>
+  
+  <% if (output) { %>
+    <h2>Command Output:</h2>
+    <pre><%= output %></pre>
+  <% } %>
+</body>
+</html>
